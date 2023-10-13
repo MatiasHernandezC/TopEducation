@@ -1,13 +1,13 @@
-package com.top.TopEducation;
+package com.TopEducation.monolitica;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TopEducationApplication {
+public class AppMonoliticaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TopEducationApplication.class, args);
+		SpringApplication.run(AppMonoliticaApplication.class, args);
 	}
 
 }
