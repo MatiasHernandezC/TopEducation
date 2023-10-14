@@ -5,6 +5,7 @@ import com.TopEducation.monolitica.repositories.AlumnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -21,11 +22,23 @@ public class AlumnoService {
         return alumnoRepository.save(usuario);
     }
 
-    public Optional<AlumnoEntity> obtenerPorId(Long id){
+    public void guardarAlumno(String nombres, String apellidos, String RUT, String colegioProcedencia,
+                              String nombreColegio, Date anoEgreso, Date fechaNacimiento){
+        AlumnoEntity alumno = new AlumnoEntity();
+        alumno.setAnoEgreso(anoEgreso);
+        alumno.setApellidos(apellidos);
+        alumno.setRUT(RUT);
+        alumno.setNombres(nombres);
+        alumno.setFechaNacimiento(fechaNacimiento);
+        alumno.setColegioProcedencia(colegioProcedencia);
+        alumno.setNombreColegio(nombreColegio);
+        alumnoRepository.save(alumno);
+    }
+    public Optional<AlumnoEntity> obtenerPorId(String id){
         return alumnoRepository.findById(id);
     }
 
-    public boolean eliminarAlumno(Long id) {
+    public boolean eliminarAlumno(String id) {
         try{
             alumnoRepository.deleteById(id);
             return true;

@@ -6,24 +6,17 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-import java.sql.Date;
-
 @Entity
-@Table(name = "Alumnos")
+@Table(name = "DescuentoProcedencia")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlumnoEntity {
+public class DescuentoProcedenciaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-    private String RUT;
-    private String Apellidos;
-    private String Nombres;
-    private Date FechaNacimiento;
-    private String ColegioProcedencia;
-    private String NombreColegio;
-    private Date AnoEgreso;
+    private String TipoColegio;
+    private int Descuento;
 
 }
