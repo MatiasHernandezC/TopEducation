@@ -20,7 +20,7 @@ public class DescuentoProcedenciaController {
     public String listar(Model model) {
         ArrayList<DescuentoProcedenciaEntity>descuentoProcedencia=descuentoProcedenciaService.obtenerDescuentoProcedencias();
         model.addAttribute("descuentoProcedencia",descuentoProcedencia);
-        return "index";
+        return "";
     }
 
 }
